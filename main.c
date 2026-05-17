@@ -5,19 +5,24 @@
 
 int main()
 {
-    float x = 32.45;
+    double radius = 0.0;
+    double area = 0.0;
+    const double PI = 3.14159;
+    double surfaceArea = 0.0;
+    double volume = 0.0;
 
-    // x = sqrt(x);
-    // x = pow(x,2);
-    // x = round(x);
-    // x = ceil(x);
-    // x = abs(x);
-    // x = log(x);
-    // x = sin(x);
-    // x = cos(x);
-    // x = tan(x);
+    printf("enter a radius: ");
+    scanf("%lf", &radius);
 
-    printf("%d ", x);
+    area = PI * pow(radius, 2);
+    surfaceArea = 4 * PI * pow(radius, 2);
+    volume = (4.3 / 3.0) * PI * pow(radius, 3);
 
+    // 2d cirlce
+    printf("Area of circle is: %.2lf\n", area);
+    // 3d cphere
+    printf("surface Area is: %.2lf \n", surfaceArea);
+
+    printf("Volume is: %.2lf \n", volume);
     return 0;
 }
