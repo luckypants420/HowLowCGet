@@ -1,86 +1,39 @@
 #include <stdio.h>   // library for input and output
 #include <stdbool.h> // library for boolean type
-#include <string.h> //library for strings 
+#include <string.h>  //library for strings
 
-// entry point for the program
-// expects an integer to return
 int main()
 {
-    /*
-    variable = reusable container for value
-    int = integer 4 bytes
+    char noun[50] = "";
+    char verb[50] = "";
+    char adj1[50] = "";
+    char adj2[50] = "";
+    char adj3[50] = "";
 
-    float = decimal with floating point number with normal behavior of six digits shown on the right 4 bytes
+    printf("Enter an adjective (description): ");
+    fgets(adj1, sizeof(adj1), stdin);
+    adj1[strlen(adj1) - 1] = '\0';
 
-    double is used for decimals with more precision for the numbers repreesnted with 15 to 16 digits after decimal 8 bytes
+    printf("Enter a noun(animal or person): ");
+    fgets(noun, sizeof(noun), stdin);
+    noun[strlen(noun) - 1] = '\0';
 
-    char is to store characters 1 byte
+    printf("Enter an adjective (description): ");
+    fgets(adj2, sizeof(adj2), stdin);
+    adj2[strlen(adj2) - 1] = '\0';
 
-    no strings in C but an array of chars size varies on length
-    this is where C is a bitch and shows how low level it is , this mf is not playing around, lowkey nice :)
-    boolean is either false or true, binary 1 byte and requires <stdbool.h>
-    */
+    printf("Enter a verb (ending w/ -ing): ");
+    fgets(verb, sizeof(verb), stdin);
+    verb[strlen(verb) - 1] = '\0';
 
-    int age = 27;
-    int year = 1998;
-    printf("hey dhari, welcome to C language have fun mf \n you are %d years old:", age);
-    printf("\nborn in year: %d", year);
+    printf("Enter an adjective (description): ");
+    fgets(adj3, sizeof(adj3), stdin);
+    adj3[strlen(adj3) - 1] = '\0';
 
-    float gpa = 8.3;
-    float price = 9.99;
-    printf("\nyour gpa is %f:", gpa);
-    printf("\nthe price of that toy is: %.2f$", price);
-
-    double pi = 3.14;
-    printf("\nthe number pi is: %.15f", pi);
-
-    char grade = 'A';
-    printf("\n ypur grade is: %c", grade);
-
-    char name[] = "Dhari aka Neo";
-    char email[] = "dhari@gmail.come";
-    printf("\n your full name is: %s", name);
-    printf("\n your email is: %s", email);
-
-    bool isOnline = true;
-    bool isAFK = false;
-    // i can use %d to represent it in 1 or 0 as in true or false
-    printf("\n your friend is online? %d", isOnline);
-    printf("\n your friend is playing? %d", isAFK);
-
-    if (isOnline)
-    {
-        printf("\n i checked and your firend i online");
-    }
-    else
-    {
-        printf("\n nah that mf is not online");
-    }
-
-    /*
-    Arithmatic
-    + , - *, ++, --, % for the remainder
-
-    x+=2
-    x-=2
-    x*=2
-    x/=2
-
-    */
-
-    int x = 1;
-    int z = 5;
-    int k = 3;
-
-    float rslt = x * z + k;
-    printf("\nthe resutl of x * z + k= %f", rslt);
-
-    // inputs from users mf siuu
-    //  max size 30 chars = 30 bytes
-    char fullName[30] = "";
-    // scanf doesnt read white spaces which is bad for full strings
-    printf("\n enter your full name now dummy\n");
-    fgets(fullName, 30, stdin);
-    printf(" \n your name is %s", fullName);
+    printf("%s\n", noun);
+    printf("%s\n", verb);
+    printf("%s\n", adj1);
+    printf("%s\n", adj2);
+    printf("%s\n", adj3);
     return 0;
 }
