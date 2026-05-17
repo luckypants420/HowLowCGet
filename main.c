@@ -1,5 +1,6 @@
 #include <stdio.h>   // library for input and output
 #include <stdbool.h> // library for boolean type
+#include <string.h> //library for strings 
 
 // entry point for the program
 // expects an integer to return
