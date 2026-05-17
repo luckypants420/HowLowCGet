@@ -64,7 +64,7 @@ int main()
     x-=2
     x*=2
     x/=2
-    
+
     */
 
     int x = 1;
@@ -72,6 +72,14 @@ int main()
     int k = 3;
 
     float rslt = x * z + k;
-    printf("the resutl of x * z + k= %f", rslt);
+    printf("\nthe resutl of x * z + k= %f", rslt);
+
+    // inputs from users mf siuu
+    //  max size 30 chars = 30 bytes
+    char fullName[30] = "";
+    // scanf doesnt read white spaces which is bad for full strings
+    printf("\n enter your full name now dummy\n");
+    fgets(fullName, 30, stdin);
+    printf(" \n your name is %s", fullName);
     return 0;
 }
