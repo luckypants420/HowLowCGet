@@ -1,39 +1,23 @@
 #include <stdio.h>   // library for input and output
 #include <stdbool.h> // library for boolean type
 #include <string.h>  //library for strings
+#include <math.h>
 
 int main()
 {
-    char noun[50] = "";
-    char verb[50] = "";
-    char adj1[50] = "";
-    char adj2[50] = "";
-    char adj3[50] = "";
+    float x = 32.45;
 
-    printf("Enter an adjective (description): ");
-    fgets(adj1, sizeof(adj1), stdin);
-    adj1[strlen(adj1) - 1] = '\0';
+    // x = sqrt(x);
+    // x = pow(x,2);
+    // x = round(x);
+    // x = ceil(x);
+    // x = abs(x);
+    // x = log(x);
+    // x = sin(x);
+    // x = cos(x);
+    // x = tan(x);
 
-    printf("Enter a noun(animal or person): ");
-    fgets(noun, sizeof(noun), stdin);
-    noun[strlen(noun) - 1] = '\0';
+    printf("%d ", x);
 
-    printf("Enter an adjective (description): ");
-    fgets(adj2, sizeof(adj2), stdin);
-    adj2[strlen(adj2) - 1] = '\0';
-
-    printf("Enter a verb (ending w/ -ing): ");
-    fgets(verb, sizeof(verb), stdin);
-    verb[strlen(verb) - 1] = '\0';
-
-    printf("Enter an adjective (description): ");
-    fgets(adj3, sizeof(adj3), stdin);
-    adj3[strlen(adj3) - 1] = '\0';
-
-    printf("%s\n", noun);
-    printf("%s\n", verb);
-    printf("%s\n", adj1);
-    printf("%s\n", adj2);
-    printf("%s\n", adj3);
     return 0;
 }
