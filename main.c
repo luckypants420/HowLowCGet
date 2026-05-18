@@ -2,23 +2,17 @@
 #include <stdbool.h> // library for boolean type
 #include <string.h>  //library for strings
 #include <math.h>    //math library
-
+#include <windows.h>
 int main()
 {
-    bool isRunning = true;
-    char response = '\0';
+    // for loops = repeat code with a condition ( initilize; condition; update)
+//for loops are better used for a specific amount of time and while is for continuoius 
 
-    do
+    for (int i = 5; i >=0; i--)
     {
-        printf("you are playing a game");
-        printf("would you like to continue? (Y = Yes / N = No)");
-        scanf(" %c", &response);
-
-        if (response != 'Y' && response != 'y')
-        {
-            isRunning = false;
-        }
-    } while (isRunning);
-    printf("you exist the game");
+        Sleep(1000);
+        printf("%d \n", i);
+    }
+    printf("happy new year");
     return 0;
 }
