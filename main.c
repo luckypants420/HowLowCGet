@@ -8,12 +8,36 @@
 
 int main()
 {
-    srand(time(NULL));
 
+    // number guessing game
+    srand(time(NULL));
+    int guess = 0;
+    int tries = 0;
     int min = 1;
-    int max = 6;
-    // psudo random numbers
-    int randomNum = (rand() % (max - min + 1)) + min;
-    printf("%d", randomNum);
+    int max = 100;
+    int answer = (rand() % (max - min + 1)) + min;
+    printf("NUMBER GUESSING GAME\n ");
+    do
+    {
+        printf("guess a number between %d - %d", min, max);
+        scanf("%d", &guess);
+        tries++;
+
+        if (guess < answer)
+        {
+            printf("too low try again \n");
+        }
+        else if (guess > answer)
+        {
+            printf("too high, try again \n");
+        }
+        else
+        {
+            printf("correct");
+        }
+    } while (guess != answer);
+
+    printf("the answer is: %d\n", answer);
+    printf("IT TOOK U %d TRIES: ", tries);
     return 0;
 }
