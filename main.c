@@ -1,28 +1,36 @@
 #include <stdio.h>   // library for input and output
 #include <stdbool.h> // library for boolean type
 #include <string.h>  //library for strings
-#include <math.h>
+#include <math.h>    //math library
+
+// compund interest calculator
 
 int main()
 {
-    double radius = 0.0;
-    double area = 0.0;
-    const double PI = 3.14159;
-    double surfaceArea = 0.0;
-    double volume = 0.0;
 
-    printf("enter a radius: ");
-    scanf("%lf", &radius);
+    double principal = 0.0;
+    double rate = 0.0;
+    int years = 0;
+    int timesCompounded = 0;
+    double total = 0.0;
 
-    area = PI * pow(radius, 2);
-    surfaceArea = 4 * PI * pow(radius, 2);
-    volume = (4.3 / 3.0) * PI * pow(radius, 3);
+    printf("compund interests calculator\n ");
 
-    // 2d cirlce
-    printf("Area of circle is: %.2lf\n", area);
-    // 3d cphere
-    printf("surface Area is: %.2lf \n", surfaceArea);
+    printf("enter the principal (p): ");
+    scanf("%lf", &principal);
 
-    printf("Volume is: %.2lf \n", volume);
+    printf("enter the interest rate % (r): ");
+    scanf("%lf", &rate);
+    rate = rate / 100;
+
+    printf("enter the # of years (t): ");
+    scanf("%d", &years);
+
+    printf("enter # of times compounded per year (n): ");
+    scanf("%d", &timesCompounded);
+
+    total = principal * pow(1 + rate/timesCompounded, timesCompounded * years);
+
+    printf("after %d years, the total will be $%.2lf", years, total);
     return 0;
 }
