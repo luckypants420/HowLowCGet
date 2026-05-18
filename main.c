@@ -3,28 +3,37 @@
 #include <string.h>  //library for strings
 #include <math.h>    //math library
 
-//global variables should be used for consts pretty much
+/*function prototypes = its how we provide compiler with a funcitons name,
+ paramters, and retyrn type before acutally defning the function,
+ this helps with readability and organization and prevent errors
 
-int add(int x, int y)
-{
-
-    int result = x + y;
-    return result;
-}
-
-int subtract(int x, int y)
-{
-    int result = x - y;
-    return result;
-}
+ */
+void hello(char name[], int age);
+bool isAlive(int age);
 
 int main()
 {
 
-    int x = 3;
-    int y = 8;
-    int result = add(8, 3);
-    int result2 = subtract(x, y);
-    printf("%d", result2);
+    hello("dhari", 32);
+    if (isAlive(43))
+    {
+        printf("yeah\n ");
+    }
+    else
+    {
+        printf("no\n");
+    }
     return 0;
+}
+
+bool isAlive(int age)
+{
+
+    return age >= 16;
+}
+
+void hello(char name[], int age)
+{
+    printf("hello %s \n", name);
+    printf("you are %d years old", age);
 }
