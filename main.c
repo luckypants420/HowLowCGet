@@ -3,40 +3,41 @@
 #include <string.h>  //library for strings
 #include <math.h>    //math library
 
-// compund interest calculator
+//weight converter 
 
 int main()
 {
+    int choice = 0;
+    float pounds = 0.0f;
+    float kilograms = 0.0f;
 
-    int age = 0;
-    bool isStudent = true;
-    char name[50] = "";
+    printf("weight conversion calculator\n");
+    printf("1. kilograms in pounds\n ");
+    printf("2. pounds to kilograms\n ");
+    printf("enter your choice\n ");
 
-    printf("enter your name ");
-    fgets(name, sizeof(name), stdin);
-    name[strlen(name) - 1] = '\0';
-    if (strlen(name) == 0)
+    scanf("%d", &choice);
+    if (choice == 1)
     {
-        printf("you didnt enter your name\n");
+        // kilograms to pounds
+        printf("enter the weight in kilograms\n");
+
+        scanf("%f", &kilograms);
+        pounds = kilograms * 2.20462;
+        printf("%.2f kilograms is equal to %.2f pounds\n", kilograms, pounds);
+    }
+    else if (choice == 2)
+    {
+        // pounds to kilograms
+        printf("enter the weight in pounds\n");
+        scanf("%f", &pounds);
+        kilograms = pounds / 2.20462;
+        printf("%.2f pounds is equal to %.2f kilograms\n", pounds, kilograms);
     }
     else
     {
-        printf("hello %s\n", name);
+        printf("invalid choice, please enter 1 or 2\n");
     }
 
-    printf("enter your age mf: ");
-    scanf("%d", &age);
-    if (age >= 18 && isStudent)
-    {
-        printf("you are an adult and you are a student");
-    }
-    else if (age <= 0)
-    {
-        printf("buddy is not even born yet");
-    }
-    else
-    {
-        printf("you are a child buddy");
-    }
     return 0;
 }
