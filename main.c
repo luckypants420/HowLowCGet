@@ -3,37 +3,20 @@
 #include <string.h>  //library for strings
 #include <math.h>    //math library
 
-/*function prototypes = its how we provide compiler with a funcitons name,
- paramters, and retyrn type before acutally defning the function,
- this helps with readability and organization and prevent errors
-
- */
-void hello(char name[], int age);
-bool isAlive(int age);
-
 int main()
 {
+    char name[69] = "";
+    printf("enter your name");
+    fgets(name, sizeof(name), stdin);
+    name[strlen(name) - 1] = '\0';
 
-    hello("dhari", 32);
-    if (isAlive(43))
+    while (strlen(name) == 0)
     {
-        printf("yeah\n ");
+        printf("name cannot be empty, please enter your name");
+        fgets(name, sizeof(name), stdin);
+        name[strlen(name) - 1] = '\0';
     }
-    else
-    {
-        printf("no\n");
-    }
+    printf("hello %s", name);
+    
     return 0;
-}
-
-bool isAlive(int age)
-{
-
-    return age >= 16;
-}
-
-void hello(char name[], int age)
-{
-    printf("hello %s \n", name);
-    printf("you are %d years old", age);
 }
