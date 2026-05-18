@@ -3,41 +3,35 @@
 #include <string.h>  //library for strings
 #include <math.h>    //math library
 
-// weight converter
-
 int main()
 {
-    // switch statemetns
+    float price = 10.0;
+    bool isStudent = true; // 10% discount
+    bool isSenior = true;  // 20% discount
 
-    int days = 0;
-
-    printf("choose a day 1- 7");
-    scanf("%d", &days);
-    switch (days)
+    if (isStudent)
     {
-    case 1:
-        printf("its saturday");
-        break;
-    case 2:
-        printf("its sunday");
-        break;
-    case 3:
-        printf("its mon");
-        break;
-    case 4:
-        printf("its tue");
-        break;
-    case 5:
-        printf("its wed");
-        break;
-    case 6:
-        printf("its thur");
-        break;
-    case 7:
-        printf("its frid");
-        break;
-    default:
-        printf("you choose the worng thing mf, r u dumb, hchoose a numb");
+        if (isSenior)
+        {
+            printf("you get a studnet discount of 10% \n");
+            printf("you get a senior discount of 20% \n");
+            price *= 0.7;
+        }
+        else
+        {
+            printf("you get a studnet discount of 10% \n");
+            price *= 0.9;
+        }
     }
+    else
+    {
+        if (isSenior)
+        {
+            printf("you get a senior discoutn of 20% \n");
+            price *= 0.8;
+        }
+    }
+    printf("the price of ticket is: $%.2f \n", price);
+
     return 0;
 }
