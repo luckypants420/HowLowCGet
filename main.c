@@ -3,22 +3,28 @@
 #include <string.h>  //library for strings
 #include <math.h>    //math library
 
+//global variables should be used for consts pretty much
 
-//return statement
-int squareNum(int num)
+int add(int x, int y)
 {
-    return num * num;
+
+    int result = x + y;
+    return result;
+}
+
+int subtract(int x, int y)
+{
+    int result = x - y;
+    return result;
 }
 
 int main()
 {
-    int x = squareNum(2);
-    int z = squareNum(4);
-    int u = squareNum(54);
 
-    printf("%d \n", x);
-    printf(" %d \n", z);
-    printf(" %d\n", u);
-    //return 0 is an exit code 
+    int x = 3;
+    int y = 8;
+    int result = add(8, 3);
+    int result2 = subtract(x, y);
+    printf("%d", result2);
     return 0;
 }
