@@ -3,41 +3,37 @@
 #include <string.h>  //library for strings
 #include <math.h>    //math library
 
-// weight converter
+/*function prototypes = its how we provide compiler with a funcitons name,
+ paramters, and retyrn type before acutally defning the function,
+ this helps with readability and organization and prevent errors
+
+ */
+void hello(char name[], int age);
+bool isAlive(int age);
 
 int main()
 {
-    // switch statemetns
 
-    int days = 0;
-
-    printf("choose a day 1- 7");
-    scanf("%d", &days);
-    switch (days)
+    hello("dhari", 32);
+    if (isAlive(43))
     {
-    case 1:
-        printf("its saturday");
-        break;
-    case 2:
-        printf("its sunday");
-        break;
-    case 3:
-        printf("its mon");
-        break;
-    case 4:
-        printf("its tue");
-        break;
-    case 5:
-        printf("its wed");
-        break;
-    case 6:
-        printf("its thur");
-        break;
-    case 7:
-        printf("its frid");
-        break;
-    default:
-        printf("you choose the worng thing mf, r u dumb, hchoose a numb");
+        printf("yeah\n ");
+    }
+    else
+    {
+        printf("no\n");
     }
     return 0;
+}
+
+bool isAlive(int age)
+{
+
+    return age >= 16;
+}
+
+void hello(char name[], int age)
+{
+    printf("hello %s \n", name);
+    printf("you are %d years old", age);
 }
