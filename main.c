@@ -3,25 +3,22 @@
 #include <string.h>  //library for strings
 #include <math.h>    //math library
 
-void happyBirthday(char name[], int age)
+
+//return statement
+int squareNum(int num)
 {
-    printf("\n happy birthday to u ");
-    printf("\n happy birthday to u ");
-    printf("\n happy birthday dear %s ", name);
-    printf("\n happy birthday to u ");
-    printf("\n you are %d years old \n", age);
+    return num * num;
 }
 
 int main()
 {
-    // funcitons = a reusable code that can be invoked "called" DRY, dont repeat yourself babe
-    char name[30] = "dhari";
-    int age = 15;
-    happyBirthday(name, age);
+    int x = squareNum(2);
+    int z = squareNum(4);
+    int u = squareNum(54);
 
-    happyBirthday(name, age);
-
-    happyBirthday(name, age);
-
+    printf("%d \n", x);
+    printf(" %d \n", z);
+    printf(" %d\n", u);
+    //return 0 is an exit code 
     return 0;
 }
