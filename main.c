@@ -5,18 +5,20 @@
 
 int main()
 {
-    char name[69] = "";
-    printf("enter your name");
-    fgets(name, sizeof(name), stdin);
-    name[strlen(name) - 1] = '\0';
+    bool isRunning = true;
+    char response = '\0';
 
-    while (strlen(name) == 0)
+    do
     {
-        printf("name cannot be empty, please enter your name");
-        fgets(name, sizeof(name), stdin);
-        name[strlen(name) - 1] = '\0';
-    }
-    printf("hello %s", name);
-    
+        printf("you are playing a game");
+        printf("would you like to continue? (Y = Yes / N = No)");
+        scanf(" %c", &response);
+
+        if (response != 'Y' && response != 'y')
+        {
+            isRunning = false;
+        }
+    } while (isRunning);
+    printf("you exist the game");
     return 0;
 }
