@@ -11,18 +11,14 @@ int main()
 
     for (int i = 5; i >= 0; i--)
     {
-        // if(i == 3)
-        // {
-        //     continue;
-        // }
+        printf("%d\n", i);
 
-        if (i == 3)
+        for (int j = 0; j < 10; j++)
         {
-            break;
+            Sleep(500);
+            printf("%d", j);
         }
-        Sleep(1000);
-        printf("%d \n", i);
+        printf("\n");
     }
-    printf("happy new year");
     return 0;
 }
