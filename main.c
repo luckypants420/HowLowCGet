@@ -3,22 +3,26 @@
 #include <string.h>  //library for strings
 #include <math.h>    //math library
 #include <windows.h>
+
+// break to stop a loopo
+//  continue to skip current cycle of loop
 int main()
 {
-    // for loops = repeat code with a condition ( initilize; condition; update)
-    // for loops are better used for a specific amount of time and while is for continuoius
 
     for (int i = 5; i >= 0; i--)
     {
+        // if(i == 3)
+        // {
+        //     continue;
+        // }
+
+        if (i == 3)
+        {
+            break;
+        }
         Sleep(1000);
         printf("%d \n", i);
-        for (int j = 1; j < 10; j++)
-        {
-            Sleep(1000);
-            printf("%d", j);
-        }
-        printf("\n");
     }
-
+    printf("happy new year");
     return 0;
 }
