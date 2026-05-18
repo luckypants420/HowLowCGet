@@ -9,12 +9,26 @@ int main()
 {
 
     int age = 0;
+    bool isStudent = true;
+    char name[50] = "";
+
+    printf("enter your name ");
+    fgets(name, sizeof(name), stdin);
+    name[strlen(name) - 1] = '\0';
+    if (strlen(name) == 0)
+    {
+        printf("you didnt enter your name\n");
+    }
+    else
+    {
+        printf("hello %s\n", name);
+    }
 
     printf("enter your age mf: ");
     scanf("%d", &age);
-    if (age >= 18)
+    if (age >= 18 && isStudent)
     {
-        printf("you are an adult");
+        printf("you are an adult and you are a student");
     }
     else if (age <= 0)
     {
