@@ -3,46 +3,25 @@
 #include <string.h>  //library for strings
 #include <math.h>    //math library
 
+void happyBirthday(char name[], int age)
+{
+    printf("\n happy birthday to u ");
+    printf("\n happy birthday to u ");
+    printf("\n happy birthday dear %s ", name);
+    printf("\n happy birthday to u ");
+    printf("\n you are %d years old \n", age);
+}
+
 int main()
 {
-    char operator = '\0';
-    double num1 = 0.0;
-    double num2 = 0.0;
-    double rslt = 0.0;
+    // funcitons = a reusable code that can be invoked "called" DRY, dont repeat yourself babe
+    char name[30] = "dhari";
+    int age = 15;
+    happyBirthday(name, age);
 
-    printf("enter the value of num1; \n");
-    scanf("%lf", &num1);
+    happyBirthday(name, age);
 
-    printf("enter the operator; \n");
-    scanf(" %c", &operator);
+    happyBirthday(name, age);
 
-    printf("enter the value of num2; \n");
-    scanf("%lf", &num2);
-
-    switch (operator)
-    {
-    case '+':
-        rslt = num1 + num2;
-        break;
-    case '-':
-        rslt = num1 - num2;
-        break;
-    case '/':
-        if (num2 == 0)
-        {
-            printf("you cannot divide by 0 \n");
-        }
-        else
-        {
-            rslt = num1 / num2;
-        }
-        break;
-    case '*':
-        rslt = num1 * num2;
-        break;
-    default:
-        printf("invalid input dummy");
-    }
-    printf("%lf", rslt);
     return 0;
 }
