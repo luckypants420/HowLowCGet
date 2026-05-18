@@ -8,15 +8,24 @@
 //  continue to skip current cycle of loop
 int main()
 {
+    int rows = 0;
+    int columns = 0;
+    char symbol = '\0';
 
-    for (int i = 5; i >= 0; i--)
+    printf("enter the # of rows: ");
+    scanf("%d", &rows);
+
+    printf("enter the # of columns: ");
+    scanf("%d", &columns);
+
+    printf("enter the symbol you wnat to print: ");
+    scanf(" %c", &symbol);
+
+    for (int i = 0; i < rows; i++)
     {
-        printf("%d\n", i);
-
-        for (int j = 0; j < 10; j++)
+        for (int i = 0; i < columns; i++)
         {
-            Sleep(500);
-            printf("%d", j);
+            printf("%c", symbol);
         }
         printf("\n");
     }
