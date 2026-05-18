@@ -5,33 +5,44 @@
 
 int main()
 {
-    float price = 10.0;
-    bool isStudent = true; // 10% discount
-    bool isSenior = true;  // 20% discount
+    char operator = '\0';
+    double num1 = 0.0;
+    double num2 = 0.0;
+    double rslt = 0.0;
 
-    if (isStudent)
+    printf("enter the value of num1; \n");
+    scanf("%lf", &num1);
+
+    printf("enter the operator; \n");
+    scanf(" %c", &operator);
+
+    printf("enter the value of num2; \n");
+    scanf("%lf", &num2);
+
+    switch (operator)
     {
-        if (isSenior)
+    case '+':
+        rslt = num1 + num2;
+        break;
+    case '-':
+        rslt = num1 - num2;
+        break;
+    case '/':
+        if (num2 == 0)
         {
-            printf("you get a studnet discount of 10% \n");
-            printf("you get a senior discount of 20% \n");
-            price *= 0.7;
+            printf("you cannot divide by 0 \n");
         }
         else
         {
-            printf("you get a studnet discount of 10% \n");
-            price *= 0.9;
+            rslt = num1 / num2;
         }
+        break;
+    case '*':
+        rslt = num1 * num2;
+        break;
+    default:
+        printf("invalid input dummy");
     }
-    else
-    {
-        if (isSenior)
-        {
-            printf("you get a senior discoutn of 20% \n");
-            price *= 0.8;
-        }
-    }
-    printf("the price of ticket is: $%.2f \n", price);
-
+    printf("%lf", rslt);
     return 0;
 }
