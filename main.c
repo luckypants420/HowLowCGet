@@ -2,7 +2,6 @@
 #include <stdbool.h> // library for boolean type
 #include <string.h>  //library for strings
 #include <math.h>    //math library
-#include <windows.h>
 #include <time.h>
 #include <stdlib.h>
 
