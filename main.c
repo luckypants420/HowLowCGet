@@ -18,11 +18,15 @@ int main()
     int answer = (rand() % (max - min + 1)) + min;
 
     printf("NUMBER GUESSING GAME\n ");
-    
+
     do
     {
-        printf("guess a number between %d - %d", min, max);
-        scanf("%d", &guess);
+        printf("guess a number between %d - %d: ", min, max);
+        while (scanf("%d", &guess) != 1)
+        {
+            printf("invalid input, enter a number: ");
+            while (getchar() != '\n');  // flush the input buffer
+        }
         tries++;
 
         if (guess < answer)
