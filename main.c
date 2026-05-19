@@ -5,18 +5,23 @@
 #include <time.h>
 #include <stdlib.h>
 
+// c doesnt automoaticlly clear memory of already been used variables
 int main()
 {
 
     // arrays
 
-    int numbers[] = {10, 20, 30, 40, 50};
+    int scores[5] = {0};
 
-    //this gives me the length of the array becuase we are dividing the amount of bytes 
-    int size = sizeof(numbers) / sizeof(numbers[0]);
+    int size = sizeof(scores) / sizeof(scores[0]);
     for (int i = 0; i < size; i++)
     {
-        printf("%d\n", numbers[i]);
+        printf("enter a score: ");
+        scanf("%d", &scores[i]);
+    }
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d\n", scores[i]);
     }
     return 0.0;
 }
