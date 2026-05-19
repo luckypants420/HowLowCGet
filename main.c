@@ -5,94 +5,95 @@
 #include <time.h>
 #include <stdlib.h>
 
-// rock, paper, scissors
-
-int getComputerChoice();
-int getUserChoice();
-void checkWinner(int userChoice, int computerChoice);
+void checkBalance(float balance);
+float deposit();
+float withdraw(float balance);
 
 int main()
 {
-    srand(time(NULL));
-
-    printf("ROCK, PAPER, SCISSORS GAME MF! \n");
-
-    int userChoice = getUserChoice();
-    int computerChoice = getComputerChoice();
-
-    switch (userChoice)
-    {
-    case 1:
-        printf("you chose ROCK! \n");
-        break;
-    case 2:
-        printf("you chose PAPER! \n");
-        break;
-    case 3:
-        printf("you chose SCISSORS! \n");
-        break;
-    }
-
-    switch (computerChoice)
-    {
-    case 1:
-        printf("CPU chose ROCK! \n");
-        break;
-    case 2:
-        printf("CPU chose PAPER! \n");
-        break;
-    case 3:
-        printf("CPU chose SCISSORS! \n");
-        break;
-    }
-
-    checkWinner(userChoice, computerChoice);
-    return 0;
-}
-int getComputerChoice()
-{
-    return (rand() % 3) + 1;
-}
-int getUserChoice()
-{
-
+    // banking program
     int choice = 0;
+    float balance = 0.0f;
+
+    printf("WELCOME TO THE BANK!\n");
+
     do
     {
-        printf("choice an option\n");
-        printf("1.ROCK\n");
-        printf("2.PAPER\n");
-        printf("3.SCISSORS\n");
-        printf("Enter your choice:\n ");
+        printf("\nSelect an option: \n");
+        printf("1.Check Balance \n");
+        printf("2.Deposit Money \n");
+        printf("3.Withdraw Money \n");
+        printf("4.Exit \n");
+        printf("Enter your choice");
         while (scanf("%d", &choice) != 1)
         {
-            printf("invalid input, enter a number: ");
+            printf("\n*** invalid input, please select 1 - 4 *** \n");
             while (getchar() != '\n')
                 ;
         }
-    } while (choice < 1 || choice > 3);
-    return choice;
+
+        switch (choice)
+        {
+        case 1:
+            checkBalance(balance);
+            break;
+        case 2:
+            balance = balance + deposit();
+            break;
+        case 3:
+            balance = balance - withdraw(balance);
+            break;
+        case 4:
+            printf("\nthank you for using the bank, GOODBYE!\n");
+            break;
+        default:
+            printf("\n*** invalid input, please select 1 - 4 *** \n");
+        }
+
+    } while (choice != 4);
+    return 0;
 }
-void checkWinner(int userChoice, int computerChoice)
+
+void checkBalance(float balance)
 {
-    if (userChoice == computerChoice)
+    printf("\n your current balance is: $%.2f \n", balance);
+}
+float deposit()
+{
+    float amount = 0.0f;
+    printf("\n enter amount to deposit: $");
+    scanf("%f", &amount);
+
+    if (amount <= 0)
     {
-        printf("its a TIE!");
-    }
-    else if (userChoice == 1 && computerChoice == 3)
-    {
-        printf("you WIN!");
-    }
-    else if (userChoice == 2 && computerChoice == 1)
-    {
-        printf("you WIN!");
-    }
-    else if (userChoice == 3 && computerChoice == 2)
-    {
-        printf("you WIN!");
+        printf("invalid amount \n");
+        return 0.0f;
     }
     else
     {
-        printf("you LOSE!");
+        printf("successfykky deposited $%.2f\n", amount);
     }
+
+    return amount;
+}
+float withdraw(float balance)
+{
+    float amount = 0.0f;
+    printf("\n enter amount to withdraw:  $");
+    scanf("%f", &amount);
+    if (amount < 0)
+    {
+        printf("invalid amount \n");
+    }
+    else if (amount > balance)
+    {
+        printf("insufficient funds! your balance is %.2f", balance);
+        return 0.0f;
+    }
+    else
+    {
+        printf("successffyly withrederew $%.2f", amount);
+        return amount;
+    }
+    return 0.0;
 }
