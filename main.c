@@ -5,44 +5,94 @@
 #include <time.h>
 #include <stdlib.h>
 
+// rock, paper, scissors
+
+int getComputerChoice();
+int getUserChoice();
+void checkWinner(int userChoice, int computerChoice);
+
 int main()
 {
-
-    // number guessing game
     srand(time(NULL));
-    int guess = 0;
-    int tries = 0;
-    int min = 1;
-    int max = 100;
-    int answer = (rand() % (max - min + 1)) + min;
 
-    printf("NUMBER GUESSING GAME\n ");
+    printf("ROCK, PAPER, SCISSORS GAME MF! \n");
 
+    int userChoice = getUserChoice();
+    int computerChoice = getComputerChoice();
+
+    switch (userChoice)
+    {
+    case 1:
+        printf("you chose ROCK! \n");
+        break;
+    case 2:
+        printf("you chose PAPER! \n");
+        break;
+    case 3:
+        printf("you chose SCISSORS! \n");
+        break;
+    }
+
+    switch (computerChoice)
+    {
+    case 1:
+        printf("CPU chose ROCK! \n");
+        break;
+    case 2:
+        printf("CPU chose PAPER! \n");
+        break;
+    case 3:
+        printf("CPU chose SCISSORS! \n");
+        break;
+    }
+
+    checkWinner(userChoice, computerChoice);
+    return 0;
+}
+int getComputerChoice()
+{
+    return (rand() % 3) + 1;
+}
+int getUserChoice()
+{
+
+    int choice = 0;
     do
     {
-        printf("guess a number between %d - %d: ", min, max);
-        while (scanf("%d", &guess) != 1)
+        printf("choice an option\n");
+        printf("1.ROCK\n");
+        printf("2.PAPER\n");
+        printf("3.SCISSORS\n");
+        printf("Enter your choice:\n ");
+        while (scanf("%d", &choice) != 1)
         {
             printf("invalid input, enter a number: ");
-            while (getchar() != '\n');  // flush the input buffer
+            while (getchar() != '\n')
+                ;
         }
-        tries++;
-
-        if (guess < answer)
-        {
-            printf("too low try again \n");
-        }
-        else if (guess > answer)
-        {
-            printf("too high, try again \n");
-        }
-        else
-        {
-            printf("correct");
-        }
-    } while (guess != answer);
-
-    printf("the answer is: %d\n", answer);
-    printf("IT TOOK U %d TRIES: ", tries);
-    return 0;
+    } while (choice < 1 || choice > 3);
+    return choice;
+}
+void checkWinner(int userChoice, int computerChoice)
+{
+    if (userChoice == computerChoice)
+    {
+        printf("its a TIE!");
+    }
+    else if (userChoice == 1 && computerChoice == 3)
+    {
+        printf("you WIN!");
+    }
+    else if (userChoice == 2 && computerChoice == 1)
+    {
+        printf("you WIN!");
+    }
+    else if (userChoice == 3 && computerChoice == 2)
+    {
+        printf("you WIN!");
+    }
+    else
+    {
+        printf("you LOSE!");
+    }
 }

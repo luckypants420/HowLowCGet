@@ -1,4 +1,3 @@
-if (i == 3)
-        {
-            continue;
-        }
+
+    printf("%d\n", userChoice);
+    printf("%d\n", computerChoice);
